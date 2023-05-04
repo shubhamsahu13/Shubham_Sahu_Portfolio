@@ -1,0 +1,113 @@
+{% extends 'ProjectReal/extras/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- about section starts  -->
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>{{ project.title }}</span> Project </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img class="tilt" src="{{ project.image.url }}" alt="">
+        </div>
+
+        <div class="content">
+            <div class="info">{{ project.description | safe }}</div>
+            <a href="{{ project.visit_url }}" target="_blank" class="btn">Visit</a>
+            <a href="{{ project.code_url }}" target="_blank" class="btn">Code</a>
+            <a href="{% url 'ProjectReal:home-page' %}" class="btn">Cool... I'm done</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- contact section starts  -->
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span> Contact </span> Me </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img class="tilt" src="{% static 'ProjectReal/images/contact-img.svg' %}" alt="">
+        </div>
+
+        <form action="">
+
+            <div class="inputBox">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+            </div>
+
+            <input type="text" placeholder="Subject" class="box">
+
+            <textarea placeholder="Message" name="" id="" cols="30" rows="10"></textarea>
+
+            <input type="submit" class="btn" value="Send">
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- footer section  -->
+<!--<div class="footer"> created by <span> mr. web designer </span> | all rights reserved! </div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- javascript part  -->
+
+<!-- typed.js link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+<!-- particles.js links  -->
+<script src="{% static 'ProjectReal/js/particles.min.js' %}"></script>
+<script src="{% static 'ProjectReal/js/script.js' %}"></script>
+
+<!-- vanilla-tilt.js link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+<script>
+
+let menu = document.querySelector('#menu-bars');
+let header = document.querySelector('header');
+
+menu.onclick = () =>{
+    menu.classList.toggle('fa-times');
+    header.classList.toggle('active');
+}
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    header.classList.remove('active');
+};
+
+var typed = new Typed('.typing-text', {
+    strings : ['Web Developer', 'Django Developer'],
+    loop : true,
+    typeSpeed : 150
+});
+
+VanillaTilt.init(document.querySelectorAll('.tilt'),{
+    max:25
+});
+
+</script>
+
+{% endblock content %}

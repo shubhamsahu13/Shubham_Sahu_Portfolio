@@ -1,0 +1,244 @@
+{% extends 'ProjectReal/extras/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- header section starts  -->
+<header>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Interests</a>
+<!--        <a href="#portfolio">Portfolio</a>-->
+        <a href="#blogs">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+<!-- home section starts  -->
+<section class="home" id="home">
+
+    <div id="particles-js"></div>
+
+    <div class="content">
+        <img class="tilt" src="{{ home.image.url }}" alt="">
+        <h3> {{ home.title }} </h3>
+        {% comment %} <h3> Apurv <span>Chatur</span> </h3> {% endcomment %}
+        <p> <span class="typing-text"></span> </p>
+        <a href="#about" class="btn">Explore</a>
+    </div>
+
+</section>
+
+<!-- about section starts  -->
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>About</span> Me </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img class="tilt" src="{{ about.image.url }}" alt="">
+        </div>
+
+        <div class="content">
+            {% comment %} <h3> I'm <span> Apurv Chatur </span> </h3> {% endcomment %}
+            <div class="info">{{ about.description | safe }}</div>
+            <div class="box-container">
+                <div class="box">
+                    <p> <span> Email: </span> shubhamsahu1234@gmail.com </p>
+                    <p> <span> Contact No.: </span> +91 95185 19268 </p>
+                    <p> <span> Location  : </span> Hydrabad</p>
+                    <p> <span> Language : </span> English, Hindi, Marathi </p>
+                </div>
+            </div>
+            <a href="{{ about.resume.url }}" target="_blank" class="btn">Resume</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- services section starts  -->
+<section class="services" id="services">
+    <h1 class="heading"> My <span> Experience </span> </h1>
+    <div class="box-container">
+
+        {% for interest in interests %}
+        <div class="box">
+            <i class="{{interest.logo}}"></i>
+            <h3>{{ interest.title }}</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
+        </div>
+        {% endfor %}
+
+        {% comment %} <div class="box tilt">
+            <i class="fas fa-star-shooting"></i>
+            <h3>Python Language</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fab fa-dyalog"></i>
+            <h3>Django Framework</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fab fa-dyalog"></i>
+            <h3>Django Framework</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
+        </div> {% endcomment %}
+
+    </div>
+
+</section>
+
+<!-- projects section starts  -->
+<section class="blogs" id="blogs">
+
+    <h1 class="heading"> My <span> Projects </span> </h1>
+
+    <div class="box-container">
+
+        {% for project in projects %}
+        <div class="box">
+            <img src="{{ project.image.url }}" alt="">
+            <h3>{{ project.title }} </h3>
+            <p>{{ project.subtitle }}</p>
+            <a href="{{ project.visit_url }}" target="_blank" class="btn">Visit</a>
+            <a href="{{ project.get_real_project_url }}" class="btn">More Details</a>
+        </div>
+        {% endfor %}
+        
+    </div>
+
+</section>
+
+<section class="services" id="Certifications">
+
+    <h1 class="heading"> My <span> Certifications </span> </h1>
+
+    <div class="box-container">
+
+        {% for certificate in certificates %}
+        <div class="box">
+            <img src="{{ certificate.file.url }}" alt="">
+            <h3>{{ certificate.title }}</h3>
+            <p>{{ certificate.subtitle }}</p>
+        </div>
+        {% endfor %}
+
+        {% comment %} <div class="box tilt">
+            <i class="fab fa-python"></i>
+            <h3>Python Certificate</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fab fa-dyalog"></i>
+            <h3>MySQL Cetificate</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
+        </div>
+
+        <div class="box tilt">
+            <i class="fab fa-dyalog"></i>
+            <h3>Django Framework</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
+        </div> {% endcomment %}
+
+    </div>
+
+</section>
+
+
+<!-- contact section starts  -->
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span> Contact </span> Me </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img class="tilt" src="{% static 'ProjectReal/images/contact-img.svg' %}" alt="">
+        </div>
+
+        <form action="." method="POST">
+            {% csrf_token %}
+            <div class="inputBox">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+            </div>
+
+            <input type="text" placeholder="Subject" class="box">
+
+            <textarea placeholder="Message" name="" id="" cols="30" rows="10"></textarea>
+
+            <input type="submit" class="btn" value="Send">
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- footer section  -->
+<!--<div class="footer"> created by <span> mr. web designer </span> | all rights reserved! </div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- javascript part  -->
+
+<!-- typed.js link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+<!-- particles.js links  -->
+<script src="{% static 'ProjectReal/js/particles.min.js' %}"></script>
+<script src="{% static 'ProjectReal/js/script.js' %}"></script>
+
+<!-- vanilla-tilt.js link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+<script>
+
+let menu = document.querySelector('#menu-bars');
+let header = document.querySelector('header');
+
+menu.onclick = () =>{
+    menu.classList.toggle('fa-times');
+    header.classList.toggle('active');
+}
+
+window.onscroll = () =>{
+    menu.classList.remove('fa-times');
+    header.classList.remove('active');
+};
+
+var typed = new Typed('.typing-text', {
+    strings : ['Django Developer'],
+    loop : true,
+    typeSpeed : 150
+});
+
+VanillaTilt.init(document.querySelectorAll('.tilt'),{
+    max:25
+});
+
+</script>
+
+{% endblock content %}
