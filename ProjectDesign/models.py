@@ -202,10 +202,10 @@ class Project(models.Model):
 
 
 class Certificate(models.Model):
-    title = models.CharField(max_length=255, unique=True, default='Certificate')
+    title = models.CharField(max_length=255, default='Certificate')
     subtitle = models.CharField(max_length=255, default='I love it!')
     file = models.FileField(upload_to='Certificate/', default='default.jpg')
-    slug = models.SlugField(unique=True, blank=True)
+    slug = models.SlugField(blank=True)
 
     # Some Common Methods
     def save(self, *args, **kwargs):
