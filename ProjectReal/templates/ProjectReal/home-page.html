@@ -27,7 +27,7 @@
     <div class="content">
         <img class="tilt" src="{{ home.image.url }}" alt="">
         <h3> {{ home.title }} </h3>
-        {% comment %} <h3> Apurv <span>Chatur</span> </h3> {% endcomment %}
+        {% comment %} <h3> Shubham <span>Sahu</span> </h3> {% endcomment %}
         <p> <span class="typing-text"></span> </p>
         <a href="#about" class="btn">Explore</a>
     </div>
@@ -46,13 +46,13 @@
         </div>
 
         <div class="content">
-            {% comment %} <h3> I'm <span> Apurv Chatur </span> </h3> {% endcomment %}
+            {% comment %} <h3> I'm <span> Shubham Sahu </span> </h3> {% endcomment %}
             <div class="info">{{ about.description | safe }}</div>
             <div class="box-container">
                 <div class="box">
-                    <p> <span> Email: </span> shubhamsahu1234@gmail.com </p>
+                    <p> <span> Email: </span> sahushubham1315@gmail.com </p>
                     <p> <span> Contact No.: </span> +91 95185 19268 </p>
-                    <p> <span> Location  : </span> Hydrabad</p>
+                    <p> <span> Location  : </span> Banglore</p>
                     <p> <span> Language : </span> English, Hindi, Marathi </p>
                 </div>
             </div>
@@ -72,7 +72,8 @@
         <div class="box">
             <i class="{{interest.logo}}"></i>
             <h3>{{ interest.title }}</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
+            <p> {{ interest.subtitle }} </p>
+            {% comment %} <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p> {% endcomment %}
         </div>
         {% endfor %}
 

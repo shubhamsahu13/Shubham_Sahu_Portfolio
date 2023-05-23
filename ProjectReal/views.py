@@ -17,10 +17,10 @@ def home_view(request):
 
     if request.method == "POST":
         send_mail(
-            subject='Thanks Dude',
-            message='hahaha',
-            from_email='chaturapurv@gmail.com',
-            recipient_list=['chaturapurv@gmail.com']
+            subject='Thanks',
+            message='Thanks for visit',
+            from_email='shubhamsahu1315@gmail.com',
+            recipient_list=['shubhamsahu1315@gmail.com']
         )
 
     template_name = 'ProjectReal/home-page.html'

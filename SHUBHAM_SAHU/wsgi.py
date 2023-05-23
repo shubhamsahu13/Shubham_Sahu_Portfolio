@@ -1,5 +1,5 @@
 """
-WSGI config for APURV_CHATUR project.
+WSGI config for SHUBHAM_SAHU project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,7 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'APURV_CHATUR.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'SHUBHAM_SAHU.settings')
 
 application = get_wsgi_application()
 

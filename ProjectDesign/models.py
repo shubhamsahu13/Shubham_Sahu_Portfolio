@@ -5,8 +5,8 @@ from ckeditor import fields
 
 
 class Home(models.Model):
-    title = models.CharField(max_length=20, unique=True, default='Apurv Chatur')
-    subtitle = models.CharField(max_length=50, default='Django Web Developer')
+    title = models.CharField(max_length=20, unique=True, default='Shubham Sahu')
+    subtitle = models.CharField(max_length=50, default='Python Developer')
     image = models.ImageField(upload_to='Home/', default='default.jpg')
     description = fields.RichTextField()
     slug = models.SlugField(unique=True, blank=True)
@@ -146,8 +146,8 @@ class Project(models.Model):
                                  ('CP', 'Client Project')
                                  ),
                                 max_length=2, blank=True, null=True)
-    visit_url = models.URLField(max_length=255, default='https://github.com/ApurvChatur/')
-    code_url = models.URLField(max_length=255, default='https://github.com/ApurvChatur/')
+    visit_url = models.URLField(max_length=255, default='https://github.com/shubhamsahu13/123')
+    code_url = models.URLField(max_length=255, default='https://github.com/shubhamsahu13/123')
     slug = models.SlugField(unique=True, blank=True)
 
     # Some Common Methods
