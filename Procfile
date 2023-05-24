@@ -1,1 +1,0 @@
-web: gunicorn APURV_CHATUR.wsgi
