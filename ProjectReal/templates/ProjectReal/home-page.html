@@ -93,7 +93,14 @@
             <i class="fab fa-dyalog"></i>
             <h3>Django Framework</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
+        </div> 
+
+        <div class="box tilt">
+            <i class="fa-solid fa-arrows-split-up-and-left"></i>
+            <h3>Ajile</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
         </div> {% endcomment %}
+
 
     </div>
 
@@ -111,7 +118,7 @@
             <img src="{{ project.image.url }}" alt="">
             <h3>{{ project.title }} </h3>
             <p>{{ project.subtitle }}</p>
-            <a href="{{ project.visit_url }}" target="_blank" class="btn">Visit</a>
+            {% comment %} <a href="{{ project.visit_url }}" target="_blank" class="btn">Visit</a> {% endcomment %}
             <a href="{{ project.get_real_project_url }}" class="btn">More Details</a>
         </div>
         {% endfor %}
@@ -231,7 +238,7 @@ window.onscroll = () =>{
 };
 
 var typed = new Typed('.typing-text', {
-    strings : ['Django Developer'],
+    strings : ['Python Developer'],
     loop : true,
     typeSpeed : 150
 });

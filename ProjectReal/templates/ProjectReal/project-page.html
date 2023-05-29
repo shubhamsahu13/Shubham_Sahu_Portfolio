@@ -16,7 +16,7 @@
 
         <div class="content">
             <div class="info">{{ project.description | safe }}</div>
-            <a href="{{ project.visit_url }}" target="_blank" class="btn">Visit</a>
+            {% comment %} <a href="{{ project.visit_url }}" target="_blank" class="btn">Visit</a> {% endcomment %}
             <a href="{{ project.code_url }}" target="_blank" class="btn">Code</a>
             <a href="{% url 'ProjectReal:home-page' %}" class="btn">Thanks for visit..</a>
         </div>

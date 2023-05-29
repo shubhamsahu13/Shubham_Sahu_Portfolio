@@ -7,7 +7,7 @@ from ProjectDesign.models import (Home,
 
 
 def home_view(request):
-    home = get_object_or_404(Home, title='Apurv Chatur')
+    home = get_object_or_404(Home, title='Shubham Sahu')
     about = get_object_or_404(About, title='About Me')
     intrests = get_list_or_404(Intrest)
     projects = get_list_or_404(Project)
